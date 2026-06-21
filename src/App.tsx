@@ -26,6 +26,8 @@ import {
   UserCheck
 } from 'lucide-react';
 import { STANDALONE_HTML } from './standalone-html-source';
+// @ts-ignore
+import logoImg from './assets/images/logo.png';
 
 export default function App() {
   // Simple ultra-fast navigation tab selection ("home", "about", "contact")
@@ -92,10 +94,10 @@ export default function App() {
           
           {/* Brand Logo & Slogan Area - Spaced heavily at the top as requested */}
           <div className="flex items-center space-x-5 py-2">
-            {/* Real Logo image from assets / or beautiful SVG fallback if missing */}
+            {/* Real Logo image from assets */}
             <div className="w-24 h-24 flex-shrink-0 flex items-center justify-center">
               <img 
-                src="/logo.png" 
+                src={logoImg} 
                 alt="Agriaura Trading Logo" 
                 className="w-full h-full object-contain" 
                 referrerPolicy="no-referrer" 
