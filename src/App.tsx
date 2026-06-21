@@ -26,8 +26,6 @@ import {
   UserCheck
 } from 'lucide-react';
 import { STANDALONE_HTML } from './standalone-html-source';
-// @ts-ignore
-import logoImg from './assets/images/logo.png';
 
 export default function App() {
   // Simple ultra-fast navigation tab selection ("home", "about", "contact")
@@ -97,7 +95,7 @@ export default function App() {
             {/* Real Logo image from assets */}
             <div className="w-24 h-24 flex-shrink-0 flex items-center justify-center">
               <img 
-                src={logoImg} 
+                src="logo.png" 
                 alt="Agriaura Trading Logo" 
                 className="w-full h-full object-contain" 
                 referrerPolicy="no-referrer" 

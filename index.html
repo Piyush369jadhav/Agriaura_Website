@@ -1,13 +1,600 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AGRIAURA TRADING | Premium Indian Fruit Export Specialist</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <title>AGRIAURA TRADING | Premium Indian Fruit Export Specialist</title>
+  
+  <!-- CSS Tailwind CDN for ultra fast client side rendering -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Font Families -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #faf8f5;
+      color: #2d2522;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-[#62755e]/20 selection:text-[#2d2522]">
+
+  <!-- HEADER HEADER SECTION (EXACTLY MATCHING COLORS & NAVIGATION SYSTEM) -->
+  <header class="bg-white border-b border-[#e9e4de] pt-6 pb-6 shadow-sm sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Logo & Slogan Area -->
+      <a href="#home" onclick="switchTab('home')" class="flex items-center space-x-5 py-2 hover:opacity-90 transition">
+        <div class="w-20 h-20 flex-shrink-0 flex items-center justify-center">
+          <img 
+            src="logo.png" 
+            alt="Agriaura Trading Logo" 
+            class="w-full h-full object-contain" 
+            referrerpolicy="no-referrer"
+            onerror="this.style.display='none';"
+          />
+        </div>
+        <div class="flex flex-col text-left">
+          <h1 class="font-extrabold text-2xl tracking-widest text-[#2d2522] leading-none uppercase">AGRIAURA</h1>
+          <span class="font-semibold text-[10px] tracking-widest text-[#62755e] uppercase mt-1">EXPORT TRADING</span>
+          <span class="text-[9px] italic text-[#c39b5a] mt-0.5 font-medium">Your Premier Fruit Partner</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigation Links -->
+      <nav class="flex items-center space-x-6 sm:space-x-10">
+        <button 
+          id="nav-home"
+          onclick="switchTab('home')"
+          class="text-xs font-semibold uppercase tracking-wider pb-1.5 border-b-2 cursor-pointer transition border-[#62755e] text-[#2d2522]"
+        >
+          Home
+        </button>
+        <button 
+          id="nav-about"
+          onclick="switchTab('about')"
+          class="text-xs font-semibold uppercase tracking-wider pb-1.5 border-b-2 cursor-pointer transition border-transparent text-[#2d2522]/60 hover:text-[#2d2522]"
+        >
+          About Us
+        </button>
+        <button 
+          id="nav-contact"
+          onclick="switchTab('contact')"
+          class="text-xs font-semibold uppercase tracking-wider pb-1.5 border-b-2 cursor-pointer transition border-transparent text-[#2d2522]/60 hover:text-[#2d2522]"
+        >
+          Contact
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CORE PAGES CONTENT PAGES -->
+  <main class="flex-grow">
+    
+    <!-- ==================== HOME TAB VIEW ==================== -->
+    <div id="view-home" class="tab-view block transition-opacity duration-300">
+      
+      <!-- HERO SECTOR -->
+      <section class="relative h-[480px] sm:h-[540px] flex items-center justify-center text-center overflow-hidden">
+        <div 
+          class="absolute inset-0 bg-cover bg-center" 
+          style="background-image: url('https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&q=80&w=1200');"
+        ></div>
+        <!-- Tint Overlay for elegant contrast -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Text Over Image -->
+        <div class="relative z-10 max-w-4xl px-6 space-y-6">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif italic font-bold text-white leading-tight drop-shadow-md">
+            Fresh Grapes and Bananas Export
+          </h2>
+          <p class="text-base sm:text-xl text-white/95 tracking-wide max-w-2xl mx-auto drop-shadow-sm font-light">
+            From Navi Mumbai to your doorstep with care
+          </p>
+
+          <!-- Olive green CTA button -->
+          <div class="pt-2">
+            <button 
+              onclick="switchTab('contact')"
+              class="px-8 py-3.5 bg-[#62755e] hover:bg-[#52634e] text-white text-xs font-bold tracking-widest uppercase rounded-full shadow-lg transition duration-200 hover:scale-105 inline-flex items-center space-x-2 cursor-pointer"
+            >
+              <span>Contact Us</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Trust elements -->
+          <div class="pt-4 flex flex-col items-center justify-center space-y-1">
+            <div class="flex space-x-1 text-[#c39b5a]">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <span class="text-[10px] text-white/80 tracking-widest font-mono uppercase font-semibold">
+              TRUSTED BY MANY
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREMIUM PRODUCT PORTFOLIO GRID -->
+      <section class="py-20 px-6 max-w-7xl mx-auto space-y-12">
+        <div class="text-center max-w-xl mx-auto">
+          <span class="text-[10px] uppercase font-mono tracking-widest font-bold text-[#c39b5a] block mb-2">Our Premium Product Range</span>
+          <h3 class="font-serif font-bold text-3xl text-[#2d2522]">Indian Fruits Choice Grades</h3>
+          <p class="text-[#6E625D] text-xs font-light mt-2 leading-relaxed">
+            We supply consistent, GlobalGAP compliant agricultural outputs directly to international seaports.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- FRUIT GRADE 1 -->
+          <div class="bg-white rounded-xl border border-[#e9e4de] overflow-hidden flex flex-col justify-between hover:border-[#c39b5a] transition duration-300 shadow-sm">
+            <div class="aspect-video bg-[#2c1d1a] relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&q=80&w=600" 
+                alt="Export Grade Grapes" 
+                class="w-full h-full object-cover opacity-90"
+              />
+              <div class="absolute top-3 left-3 bg-[#62755e] text-white text-[9px] font-mono font-bold px-2.5 py-0.5 rounded shadow">
+                APEDA REGISTERED
+              </div>
+            </div>
+            <div class="p-6 space-y-3 text-left">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif font-bold text-lg text-[#2d2522]">Premium Thompson Seedless Grapes</h4>
+                <span class="text-[10px] font-mono text-[#c39b5a] uppercase font-bold">16mm - 22mm</span>
+              </div>
+              <p class="text-xs text-[#6E625D] font-light leading-relaxed">
+                Sourced from authorized farm cooperatives in Nashik and Sangli. Crisp texture, standard sweet flavor rating. Packed inside 5kg or 9kg cartons with sulfur pads.
+              </p>
+              <div class="border-t border-[#f4f0ea] pt-3 flex justify-between items-center text-[10px] font-mono text-[#6E625D]">
+                <span>Availability: <strong class="text-amber-800">January - April</strong></span>
+                <span>16° - 18° Brix index</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRUIT GRADE 2 -->
+          <div class="bg-white rounded-xl border border-[#e9e4de] overflow-hidden flex flex-col justify-between hover:border-[#c39b5a] transition duration-300 shadow-sm">
+            <div class="aspect-video bg-[#2c1d1a] relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=600" 
+                alt="Export Grade Bananas" 
+                class="w-full h-full object-cover opacity-90"
+              />
+              <div class="absolute top-3 left-3 bg-[#62755e] text-white text-[9px] font-mono font-bold px-2.5 py-0.5 rounded shadow">
+                YEAR-ROUND
+              </div>
+            </div>
+            <div class="p-6 space-y-3 text-left">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif font-bold text-lg text-[#2d2522]">Premium Fresh Bananas</h4>
+                <span class="text-[10px] font-mono text-[#c39b5a] uppercase font-bold">Export Choice Grade</span>
+              </div>
+              <p class="text-xs text-[#6E625D] font-light leading-relaxed">
+                Firm, pristine skin quality, free of bruises. Sourced from choice grower fields, vacuum packed with premium telescopic ventilation boxes protecting transit shelf-life.
+              </p>
+              <div class="border-t border-[#f4f0ea] pt-3 flex justify-between items-center text-[10px] font-mono text-[#6E625D]">
+                <span>Availability: <strong class="text-amber-800">Continuous 12m</strong></span>
+                <span>High Grade Selection</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cargo Capacity Specification Table -->
+        <div class="max-w-4xl mx-auto mt-12 bg-white border border-[#e9e4de] rounded-xl p-6 sm:p-8 space-y-4 shadow-sm">
+          <h4 class="font-serif font-bold text-lg text-[#2d2522]">FCL Standard Logistics Capacity</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left text-[#6E625D] font-mono">
+              <thead class="bg-[#FAF9F6] text-[#2d2522] uppercase text-[10px] tracking-widest border-b border-[#e9e4de]">
+                <tr>
+                  <th scope="col" class="px-4 py-3">Produce</th>
+                  <th scope="col" class="px-4 py-3">Standard Packaging</th>
+                  <th scope="col" class="px-4 py-3">Capacity limit Per 40ft Reefer</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#e9e4de]">
+                <tr class="hover:bg-[#fdfbf9]">
+                  <td class="px-4 py-3 font-semibold text-[#2d2522]">Table Grapes</td>
+                  <td class="px-4 py-3">5kg, 8.2kg, 9kg cartons (pouch/punnet packing)</td>
+                  <td class="px-4 py-3">Approx. 2,000 to 2,500 cartons load limits</td>
+                </tr>
+                <tr class="hover:bg-[#fdfbf9]">
+                  <td class="px-4 py-3 font-semibold text-[#2d2522]">Premium Bananas</td>
+                  <td class="px-4 py-3">13.5kg, 18.5kg cartons (vacuum sleeve packed)</td>
+                  <td class="px-4 py-3">Approx. 1,000 to 1,200 cartons load limits</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VERIFIED GOVERNMENT REGISTRATION CREDENTIALS -->
+      <section class="bg-white border-t border-[#e9e4de] py-20 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <div class="text-center max-w-xl mx-auto">
+            <span class="text-[10px] uppercase font-mono tracking-widest font-bold text-[#c39b5a] block mb-2">Verified B2B Credentials</span>
+            <h3 class="font-serif font-bold text-2xl text-[#2d2522]">Certified Export Standards</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            
+            <div class="bg-[#faf8f5] p-6 rounded-xl border border-[#e9e4de] space-y-2 text-left shadow-sm">
+              <span class="text-[10px] font-mono font-bold text-[#c39b5a] uppercase">FSSAI Authority</span>
+              <h4 class="text-base font-serif font-bold text-[#2d2522]">Food Safety License</h4>
+              <p class="text-[10.5px] text-[#6E625D] font-mono bg-white p-2 rounded border border-[#e9e4de] select-all">
+                21525016000144
+              </p>
+            </div>
+
+            <div class="bg-[#faf8f5] p-6 rounded-xl border border-[#e9e4de] space-y-2 text-left shadow-sm">
+              <span class="text-[10px] font-mono font-bold text-[#c39b5a] uppercase block">APEDA Ministry</span>
+              <h4 class="text-base font-serif font-bold text-[#2d2522]">Agricultural Govt RCMC</h4>
+              <p class="text-[10.5px] text-[#6E625D] font-mono bg-white p-2 rounded border border-[#e9e4de] select-all">
+                RCMC/18934/20-26
+              </p>
+            </div>
+
+            <div class="bg-[#faf8f5] p-6 rounded-xl border border-[#e9e4de] space-y-2 text-left shadow-sm">
+              <span class="text-[10px] font-mono font-bold text-[#c39b5a] uppercase block">GST Registration</span>
+              <h4 class="text-base font-serif font-bold text-[#2d2522]">Government GSTIN</h4>
+              <p class="text-[10.5px] text-[#6E625D] font-mono bg-white p-2 rounded border border-[#e9e4de] select-all">
+                27ABBCA9034H1ZP
+              </p>
+            </div>
+
+            <div class="bg-[#faf8f5] p-6 rounded-xl border border-[#e9e4de] space-y-2 text-left shadow-sm">
+              <span class="text-[10px] font-mono font-bold text-[#c39b5a] uppercase block">DGFT Ministry</span>
+              <h4 class="text-base font-serif font-bold text-[#2d2522]">Import Export Code</h4>
+              <p class="text-[10.5px] text-[#6E625D] font-mono bg-white p-2 rounded border border-[#e9e4de] select-all">
+                ABBCA9034H
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== ABOUT TAB VIEW ==================== -->
+    <div id="view-about" class="tab-view hidden transition-opacity duration-300">
+      <div class="py-16 px-6 max-w-4xl mx-auto space-y-12">
+        
+        <div class="space-y-4 text-left">
+          <span class="text-[10px] uppercase font-mono tracking-widest font-bold text-[#62755e] block">About Our Journey</span>
+          <h2 class="font-serif font-semibold text-4xl text-[#2d2522] italic leading-tight">
+            About Agriaura Trading
+          </h2>
+          <div class="h-0.5 w-16 bg-[#c39b5a]"></div>
+        </div>
+
+        <div class="space-y-6 text-sm text-[#6E625D] leading-relaxed font-light text-left">
+          <p>
+            Operating with logistics alignments in the central port grid of <strong>Nerul, Navi Mumbai</strong>, AGRIAURA TRADING bridges GlobalGAP-compliant grower cooperatives with quality-critical international importers. We manage sorting protocols, sanitization schedules, pre-cooling operations, and customs clearing dispatch handling to ensure fresh produce lands in destination markets with maximal crispness and optimal shelf life margins.
+          </p>
+          <p>
+            Our core mission is straightforward: eliminating shipping delays and temperature drops. By utilizing strict biological controls at origin, we preserve natural nutrients and brix indices. Whether shipping highly sensitive Thompson Seedless table grapes or Cavendish bananas, our standards remain absolute and verified.
+          </p>
+        </div>
+
+        <!-- DIRECTORS PROMINENT SECTION (Vilas Joshi, Rohit Garude) -->
+        <div class="bg-white border border-[#e9e4de] p-8 rounded-2xl space-y-8 text-left shadow-sm">
+          <div class="space-y-2">
+            <span class="text-[10px] font-mono font-bold text-[#c39b5a] uppercase block">Agriaura Board</span>
+            <h3 class="text-2xl font-serif font-bold text-[#2d2522] italic">Our Active Directors</h3>
+            <p class="text-xs text-[#6E625D] font-light">
+              Governing commercial pipelines and field sourcing registries with decades of agricultural transport expertise.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+            
+            <!-- Director 1 -->
+            <div class="p-6 rounded-xl bg-[#faf8f5] border border-[#e9e4de] space-y-3 flex flex-col justify-between">
+              <div class="space-y-1.5">
+                <div class="w-8 h-8 rounded bg-[#62755e]/10 text-[#62755e] flex items-center justify-center mb-1">
+                  <!-- UserCheck icon replacement -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h4 class="font-serif font-bold text-lg text-[#2d2522]">Vilas Joshi</h4>
+                <span class="text-[10px] font-mono font-bold text-[#c39b5a] tracking-widest uppercase block">
+                  Managing Director
+                </span>
+              </div>
+              <p class="text-xs text-[#6E625D] font-light leading-relaxed pt-2">
+                Supervising global seaport logistics, JNPT clearance channels, and commercial custom contracts.
+              </p>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="p-6 rounded-xl bg-[#faf8f5] border border-[#e9e4de] space-y-3 flex flex-col justify-between">
+              <div class="space-y-1.5">
+                <div class="w-8 h-8 rounded bg-[#62755e]/10 text-[#62755e] flex items-center justify-center mb-1">
+                  <!-- UserCheck icon replacement -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h4 class="font-serif font-bold text-lg text-[#2d2522]">Rohit Garude</h4>
+                <span class="text-[10px] font-mono font-bold text-[#c39b5a] tracking-widest uppercase block">
+                  Director of Operations
+                </span>
+              </div>
+              <p class="text-xs text-[#6E625D] font-light leading-relaxed pt-2">
+                Directing cold chain integrity, pesticide screening audits, and grower cooperative relationships at Nashik fields.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FARM TO FORK TRACEABILITY -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          <div class="p-6 bg-[#faf8f5] rounded-xl border border-[#e9e4de] space-y-2 shadow-sm">
+            <h4 class="font-serif font-bold text-base text-[#2d2522]">Thompson Seedless Sourcing</h4>
+            <p class="text-xs text-[#6E625D] font-light leading-relaxed">
+              Grown on clean soils matching European regulatory metrics. Mechanically categorized and protected against shipping mold.
+            </p>
+          </div>
+          <div class="p-6 bg-[#faf8f5] rounded-xl border border-[#e9e4de] space-y-2 shadow-sm">
+            <h4 class="font-serif font-bold text-base text-[#2d2522]">Premium Banana Sourcing</h4>
+            <p class="text-xs text-[#6E625D] font-light leading-relaxed">
+              Thoroughly evaluated for stem size, hand weight, and greenness variables to withstand 25-day maritime preservation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== CONTACT TAB VIEW ==================== -->
+    <div id="view-contact" class="tab-view hidden transition-opacity duration-300">
+      <div class="py-16 px-6 max-w-4xl mx-auto space-y-12">
+        
+        <div class="space-y-4 text-left">
+          <span class="text-[10px] uppercase font-mono tracking-widest font-bold text-[#62755e] block">Direct Sea Desk</span>
+          <h2 class="font-serif font-semibold text-4xl text-[#2d2522] italic leading-tight">
+            Request B2B Quote
+          </h2>
+          <div class="h-0.5 w-16 bg-[#c39b5a]"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start text-left">
+          
+          <!-- Contact Details Left Column -->
+          <div class="md:col-span-5 space-y-6">
+            <div class="bg-white border border-[#e9e4de] p-6 rounded-2xl space-y-6 shadow-sm">
+              <h3 class="font-serif font-bold text-[#2d2522] text-lg">Official B2B Desk</h3>
+              
+              <!-- Phone Details -->
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-mono text-[#c39b5a] tracking-widest uppercase font-bold block">DIRECT CUSTOMER LINE</span>
+                <a 
+                  href="tel:+919653690014" 
+                  class="text-base font-bold text-[#2d2522] hover:text-[#62755e] flex items-center space-x-2 transition"
+                >
+                  <!-- Phone icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#62755e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>+91 96536 90014</span>
+                </a>
+              </div>
+
+              <!-- Email Details -->
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-mono text-[#c39b5a] tracking-widest uppercase font-bold block">EMAIL COMMUNICATIONS</span>
+                <a 
+                  href="mailto:agriauratrading@gmail.com" 
+                  class="text-sm font-semibold text-[#2d2522] hover:text-[#62755e] flex items-center space-x-2 transition select-all"
+                >
+                  <!-- Mail Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#62755e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>agriauratrading@gmail.com</span>
+                </a>
+              </div>
+
+              <!-- Operational Desk -->
+              <div class="space-y-1.5">
+                <span class="text-[9px] font-mono text-[#c39b5a] tracking-widest uppercase font-bold block">OPERATIONAL DESK</span>
+                <div class="text-xs text-[#6E625D] flex items-start space-x-2 leading-relaxed">
+                  <!-- MapPin Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#c39b5a] mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Nerul, Navi Mumbai, Maharashtra, India - Nhava Sheva Sea Gate.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-[#62755e]/10 border border-[#62755e]/20 text-[#62755e] rounded-xl text-[11px] leading-relaxed">
+              <strong>Notice:</strong> Quotes for CIF European seaports or FOB Nhava Sheva are provided within 12 business hours of form validation.
+            </div>
+          </div>
+
+          <!-- Form Right Column -->
+          <div class="md:col-span-7 bg-white border border-[#e9e4de] p-8 rounded-2xl shadow-sm">
+            
+            <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+              
+              <div>
+                <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#6E625D] mb-1">Company Name</label>
+                <input 
+                  type="text" 
+                  id="form-company"
+                  required
+                  placeholder="e.g. EuroFruit Wholesalers Ltd"
+                  class="w-full p-2.5 bg-[#faf8f5] border border-[#e9e4de] rounded text-xs focus:outline-none focus:border-[#62755e]"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#6E625D] mb-1">Business Email</label>
+                  <input 
+                    type="email" 
+                    id="form-email"
+                    required
+                    placeholder="buyer@company.com"
+                    class="w-full p-2.5 bg-[#faf8f5] border border-[#e9e4de] rounded text-xs focus:outline-none focus:border-[#62755e]"
+                  />
+                </div>
+                <div>
+                  <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#6E625D] mb-1">Contact Phone</label>
+                  <input 
+                    type="tel" 
+                    id="form-phone"
+                    required
+                    placeholder="+1 234 567 8900"
+                    class="w-full p-2.5 bg-[#faf8f5] border border-[#e9e4de] rounded text-xs focus:outline-none focus:border-[#62755e]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#6E625D] mb-1">Required Produce</label>
+                <select 
+                  id="form-produce"
+                  class="w-full p-2.5 bg-[#faf8f5] border border-[#e9e4de] rounded text-xs focus:outline-none focus:border-[#62755e]"
+                >
+                  <option value="Grapes">Thompson Seedless Grapes</option>
+                  <option value="Bananas">Cavendish G9 Bananas</option>
+                  <option value="Both">Bulk Grapes &amp; Bananas Cargo</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-[#6E625D] mb-1">Custom Loading Requirements</label>
+                <textarea 
+                  id="form-message"
+                  rows="3"
+                  placeholder="e.g. Minimum 18° Brix rating, customized telescopic double-wall container packaging."
+                  class="w-full p-2.5 bg-[#faf8f5] border border-[#e9e4de] rounded text-xs focus:outline-none focus:border-[#62755e] resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                id="submit-btn"
+                class="w-full py-3 bg-[#62755e] hover:bg-[#52634e] text-white text-xs font-bold uppercase tracking-widest rounded transition duration-200 cursor-pointer text-center"
+              >
+                Submit RFQ Proposal
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#2d2522] text-[#fdfbf9] py-12 px-4 sm:px-6 lg:px-8 border-t border-[#1a1210]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-sans">
+      
+      <div class="flex items-center space-x-3">
+        <span class="font-black tracking-widest text-[#fdfbf9] select-none text-base">AGRIAURA</span>
+        <span class="text-[10px] text-white/50 tracking-wider">| EST. 2024</span>
+      </div>
+
+      <p class="text-[11px] text-white/60 font-light text-center">
+        &copy; 12-Month Continuous supply. Operating from central transport grids in Nerul, Navi Mumbai. All Rights Reserved.
+      </p>
+
+      <span class="text-[10px] text-white/40 tracking-wider font-mono">
+        Nhava Sheva Cargo Dispatch Grid
+      </span>
+
+    </div>
+  </footer>
+
+  <!-- SIMPLE INLINE JS FOR TRANSITIONS, NAVIGATION AND FORMS -->
+  <script>
+    // Handles dynamic tab switching
+    function switchTab(tabId) {
+      // Find all tab content elements
+      const views = document.querySelectorAll('.tab-view');
+      views.forEach(view => {
+        view.classList.add('hidden');
+      });
+
+      // Show the selected view
+      const activeView = document.getElementById('view-' + tabId);
+      if (activeView) {
+        activeView.classList.remove('hidden');
+      }
+
+      // Update button visual styles
+      const buttons = {
+        home: document.getElementById('nav-home'),
+        about: document.getElementById('nav-about'),
+        contact: document.getElementById('nav-contact')
+      };
+
+      Object.keys(buttons).forEach(key => {
+        const btn = buttons[key];
+        if (btn) {
+          if (key === tabId) {
+            btn.classList.remove('border-transparent', 'text-[#2d2522]/60');
+            btn.classList.add('border-[#62755e]', 'text-[#2d2522]');
+          } else {
+            btn.classList.remove('border-[#62755e]', 'text-[#2d2522]');
+            btn.classList.add('border-transparent', 'text-[#2d2522]/60');
+          }
+        }
+      });
+
+      // Scroll to the top on transition
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Capture standard anchor hash-routing fallbacks for deep links
+    window.addEventListener('load', function() {
+      const hash = window.location.hash.substring(1);
+      if (['home', 'about', 'contact'].includes(hash)) {
+        switchTab(hash);
+      }
+    });
+
+    // Handle B2B RFQ submissions and forward user to WhatsApp link
+    function handleQuoteSubmit(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.innerText = 'Redirecting to WhatsApp...';
+      submitBtn.disabled = true;
+
+      // Siphon field values
+      const company = document.getElementById('form-company').value || 'B2B Client';
+      const email = document.getElementById('form-email').value || '';
+      const phone = document.getElementById('form-phone').value || '';
+      const produce = document.getElementById('form-produce').value || 'Grapes';
+      const message = document.getElementById('form-message').value || 'Please send us a price proposal.';
+
+      // Compose the perfect professional WhatsApp string
+      const whatsappText = `Hello Agriaura Trading Team. I am writing from *${company}* (${email}). We want to request a quote for *${produce}*. Phone: *${phone}*. Message: ${message}`;
+
+      setTimeout(() => {
+        // Direct WhatsApp API redirect link
+        window.open(`https://wa.me/919653690014?text=${encodeURIComponent(whatsappText)}`, '_blank');
+        
+        // Reset B2B form clean state
+        document.getElementById('quote-form').reset();
+        submitBtn.innerText = 'Submit RFQ Proposal';
+        submitBtn.disabled = false;
+      }, 800);
+    }
+  </script>
+
+</body>
 </html>
