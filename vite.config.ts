@@ -11,12 +11,32 @@ export default defineConfig(() => {
         name: 'copy-root-logo',
         buildStart() {
           const possibleLogos = ['logo.png', 'Logo.png', 'logo.jpg', 'logo.jpeg', 'Logo.jpg', 'Logo.jpeg'];
+          let found = false;
           for (const name of possibleLogos) {
             if (fs.existsSync(`./${name}`)) {
-              fs.mkdirSync('./src/assets/images', { recursive: true });
-              fs.copyFileSync(`./${name}`, './src/assets/images/logo.png');
-              console.log(`Successfully copied ${name} from root to assets/images/logo.png`);
+              try {
+                fs.mkdirSync('./public', { recursive: true });
+                fs.copyFileSync(`./${name}`, './public/logo.png');
+                fs.mkdirSync('./src/assets/images', { recursive: true });
+                fs.copyFileSync(`./${name}`, './src/assets/images/logo.png');
+                console.log(`Successfully copied ${name} to public and src directories.`);
+                found = true;
+              } catch (e) {
+                console.error('Error copying logo from root:', e);
+              }
               break;
+            }
+          }
+          if (!found && fs.existsSync('./src/assets/images/logo.png')) {
+            try {
+              fs.mkdirSync('./public', { recursive: true });
+              fs.copyFileSync('./src/assets/images/logo.png', './public/logo.png');
+              if (!fs.existsSync('./logo.png')) {
+                fs.copyFileSync('./src/assets/images/logo.png', './logo.png');
+              }
+              console.log('Successfully synchronized logo from src/assets/images to public and root.');
+            } catch (e) {
+              console.error('Error synchronizing logo:', e);
             }
           }
         }

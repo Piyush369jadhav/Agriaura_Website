@@ -30,7 +30,6 @@ import { STANDALONE_HTML } from './standalone-html-source';
 export default function App() {
   // Simple ultra-fast navigation tab selection ("home", "about", "contact")
   const [activeTab, setActiveTab] = useState<'home' | 'about' | 'contact'>('home');
-  const [logoFailed, setLogoFailed] = useState(false);
   
   // Exporter Drawer Status
   const [exportModalOpen, setExportModalOpen] = useState(false);
@@ -95,79 +94,12 @@ export default function App() {
           <div className="flex items-center space-x-5 py-2">
             {/* Real Logo image from assets / or beautiful SVG fallback if missing */}
             <div className="w-24 h-24 flex-shrink-0 flex items-center justify-center">
-              {!logoFailed ? (
-                <img 
-                  src="/src/assets/images/logo.png" 
-                  alt="Agriaura Trading Logo" 
-                  className="w-full h-full object-contain" 
-                  referrerPolicy="no-referrer" 
-                  onError={() => {
-                    console.log("logoImg loading failed, falling back to SVG");
-                    setLogoFailed(true);
-                  }}
-                />
-              ) : (
-                <svg viewBox="0 0 200 200" className="w-full h-full" fill="none">
-                  {/* Inner white circle base */}
-                  <circle cx="100" cy="80" r="31" fill="#ffffff" stroke="#55843a" strokeWidth="2.5" />
-                  
-                  {/* Agricultural/Tractor lines horizon inside circle */}
-                  <path d="M70,80 Q100,82 130,80" stroke="#55843a" strokeWidth="2.5" fill="none" />
-                  <line x1="72" y1="75" x2="128" y2="75" stroke="#55843a" strokeWidth="1.5" />
-                  <line x1="75" y1="83" x2="125" y2="83" stroke="#2b5025" strokeWidth="1" />
-
-                  {/* Cultivated field wedge lines (yellow/gold) */}
-                  <path d="M80,88 C88,96 100,99 100,99 Q100,99 112,96 C120,88 123,83 125,83 C122,96 112,107 100,107 C88,107 78,96 75,83 C77,83 78,85 80,88 Z" fill="#f1b319" />
-                  {/* White separations of field wedges */}
-                  <path d="M100,75 L80,100 M100,75 L90,106 M100,75 L100,108 M100,75 L110,106 M100,75 L120,100" stroke="#ffffff" strokeWidth="1.5" />
-
-                  {/* Left tilted leaf (green) */}
-                  <path d="M99,61 C91,48 77,41 77,41 C77,41 78,57 91,63 C94,64 97,63 99,61 Z" fill="#598b42" />
-                  {/* Right tilted leaf (green) */}
-                  <path d="M101,61 C109,48 123,41 123,41 C123,41 122,57 109,63 C106,64 103,63 101,61 Z" fill="#598b42" />
-
-                  {/* Top center leaf (gold/yellow) */}
-                  <path d="M100,30 C104,40 106,50 100,60 C94,50 96,40 100,30 Z" fill="#f1b319" stroke="#ffffff" strokeWidth="0.5" />
-                  <path d="M100,30 L100,60" stroke="#ffffff" strokeWidth="0.75" />
-
-                  {/* Left hand holding the badge */}
-                  <g id="left-hand">
-                    <path d="M100,135 C88,133 75,124 68,111 C61,98 62,87 63,84 C64,81 67,82 68,85 C69,88 69,101 79,114 C83,119 88,123 93,120 C85,111 79,103 76,93 C74,87 76,84 78,84 C80,84 83,89 87,98 C91,105 95,108 98,104 C92,93 88,85 86,76 C85,71 88,69 90,69 C93,69 95,75 97,83 C100,90 102,93 104,89 C101,77 99,71 98,66 C97,62 101,60 102,60 C104,60 105,65 106,75 C107,85 106,94 100,106" fill="#2b5025" />
-                  </g>
-                  
-                  {/* Right hand mirroring left hand */}
-                  <g id="right-hand" transform="translate(200, 0) scale(-1, 1)">
-                    <use href="#left-hand" />
-                  </g>
-
-                  {/* Symmetrical flank branches with leaves */}
-                  <g id="left-branch">
-                    <path d="M100,140 C60,135 45,110 38,80" fill="none" stroke="#2b5025" strokeWidth="2.2" strokeLinecap="round" />
-                    <path d="M38,80 C32,68 40,60 45,66 C42,75 38,80 38,80 Z" fill="#598b42" />
-                    <path d="M47,105 C38,98 44,90 51,94 C49,101 47,105 47,105 Z" fill="#598b42" />
-                    <path d="M62,125 C53,118 57,108 65,112 C63,121 62,125 62,125 Z" fill="#598b42" />
-                  </g>
-                  <g id="right-branch" transform="translate(200, 0) scale(-1, 1)">
-                    <use href="#left-branch" />
-                  </g>
-
-                  {/* Arched ribbon double green borders */}
-                  <path d="M 40,122 A 73,73 0 0,0 160,122" fill="none" stroke="#2b5025" strokeWidth="2" />
-                  <path d="M 45,136 A 65,65 0 0,0 155,136" fill="none" stroke="#2b5025" strokeWidth="1.5" />
-
-                  {/* Left and right flanking dots */}
-                  <circle cx="44" cy="121" r="2.5" fill="#2b5025" />
-                  <circle cx="156" cy="121" r="2.5" fill="#2b5025" />
-
-                  {/* Text Path for the banner */}
-                  <path id="logo-text-path-custom" d="M 45,125 A 68,68 0 0,0 155,125" fill="none" />
-                  <text className="text-[9px] font-sans font-bold tracking-[0.24em]" fill="#2b5025">
-                    <textPath href="#logo-text-path-custom" startOffset="50%" textAnchor="middle">
-                      AGRIAURA TRADING
-                    </textPath>
-                  </text>
-                </svg>
-              )}
+              <img 
+                src="/logo.png" 
+                alt="Agriaura Trading Logo" 
+                className="w-full h-full object-contain" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
             
             <div className="flex flex-col text-left">
