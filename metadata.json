@@ -1,0 +1,6 @@
+{
+  "name": "Agriaura Trading",
+  "description": "Premium Grape & Fruit Export Company. Delivering farm-fresh certified Indian grapes and bananas to global markets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
